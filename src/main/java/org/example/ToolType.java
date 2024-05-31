@@ -1,4 +1,4 @@
-package cardinal;
+package org.example;
 
 import java.math.BigDecimal;
 

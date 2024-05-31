@@ -1,11 +1,5 @@
-package cardinal;
+package org.example;
 import java.math.BigDecimal;
-//import java.math.RoundingMode;
-//import java.time.DayOfWeek;
-//import java.time.LocalDate;
-//import java.util.EnumSet;
-//import java.util.HashMap;
-//import java.util.Map;
 
 public class RentalTool {	
 	public String toolCode;

@@ -1,4 +1,4 @@
-package cardinal;
+package org.example;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,13 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
-//import cardinal.RentalTool;
 
 public class RentalAgreement {
-	private RentalTool rentedTool;
-    private int rentalDays;
-    private LocalDate checkoutDate;
-    private int discountPercent;
+	final private RentalTool rentedTool;
+    final private int rentalDays;
+    final private LocalDate checkoutDate;
+    final private int discountPercent;
 
     private LocalDate dueDate;
     private BigDecimal preDiscountCharge;
@@ -75,14 +74,11 @@ public class RentalAgreement {
 
     private LocalDate getIndependenceDay(int year) {
         LocalDate julyFourth = LocalDate.of(year, 7, 4);
-        switch (julyFourth.getDayOfWeek()) {
-            case SATURDAY:
-                return julyFourth.minusDays(1);
-            case SUNDAY:
-                return julyFourth.plusDays(1);
-            default:
-                return julyFourth;
-        }
+        return switch (julyFourth.getDayOfWeek()) {
+            case SATURDAY -> julyFourth.minusDays(1);
+            case SUNDAY -> julyFourth.plusDays(1);
+            default -> julyFourth;
+        };
     }
 
     public void printRentalAgreement() {
